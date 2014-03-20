@@ -25,6 +25,4 @@ d=mean(verg);
  %para que una señal sea estacionaria se pide que verifique las propiedades
  %estadisticas de la señal a lo largo de todos los tiempo para todas la
  %realizaciones. por lo tanto tiene como esta señal tiene una distribucion
- %normal deve verificar que para cada ti de todas la realizaciones
- %la varianza tienda  (desvio al cuadrado) a 1 osae la media del desvio
- %tienda a 1, y que la media de las medias tienda a cero.
+ %normal deve verificar que. 
