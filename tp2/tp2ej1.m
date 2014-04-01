@@ -112,9 +112,17 @@ for i=1:1:N
     rand_accion = rand_accion + abs(RANDO(i));
     %rand_potencia = rand_potencia + RANDO(i)*RANDO(i);
 end
+disp( "================================================" );
+disp( "Señal random" );
 rand_valor_medio = rand_valor_medio/N;
+disp( "Valor medio: " ), disp( rand_valor_medio );
 rand_max = max(RANDO);
+disp( "Maximo: " ), disp( rand_max );
 rand_min = min(RANDO);
+disp( "Minimo: " ), disp( rand_min );
 rand_amplitud = rand_max - rand_min;
+disp( "Amplitud: " ), disp( rand_amplitud );
 rand_potencia = rand_energia/N;
+disp( "Potencia: " ), disp( rand_potencia );
 rand_RSM = sqrt(rand_potencia);
+disp( "RSM: " ), disp( rand_RSM );
