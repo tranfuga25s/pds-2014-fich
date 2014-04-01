@@ -16,6 +16,7 @@ for i=1:1:N
     sin_accion = sin_accion + abs(x(i));
    % sin_potencia = sin_potencia + x(i)*x(i);
 end
+disp( "Señal senoidal: " );
 sin_valor_medio = sin_valor_medio/N;
 sin_max = max(x);
 sin_min = min(x);
