@@ -82,13 +82,18 @@ for i=1:1:N
 end
 disp( "====================================================" );
 disp( "Señal Rampa: " );
-
 ramp_valor_medio = ramp_valor_medio/N;
+disp( "Valor medio: " ), disp( ramp_valor_medio );
 ramp_max = max(RAMP);
+disp( "Valor máximo" ), disp( ramp_max );
 ramp_min = min(RAMP);
+idsp( "Valor minimo" ), disp( ramp_min );
 ramp_amplitud = ramp_max - ramp_min;
+disp( "Amplitud: " ), disp( ramp_amplitud );
 ramp_potencia = ramp_energia/N;
+disp( "Potencia: " ), disp( ramp_potencia );
 ramp_RSM = sqrt(ramp_potencia);
+disp( "RSM: " ), disp( ramp_RSM );
 
 %ALEATORIA
 trand = 0:0.1:10;
