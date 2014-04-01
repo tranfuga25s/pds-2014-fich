@@ -48,7 +48,8 @@ for i=1:1:N
     sqr_accion = sqr_accion + abs(SQ(i));
     sqr_potencia = sqr_potencia + SQ(i)*SQ(i);
 end
-disp( "Señal senoidal: " );
+disp( "====================================================" );
+disp( "Señal Cuadrada: " );
 sqrvalor_medio = sqr_valor_medio/N;
 disp( "Valor medio: " ), disp( sqr_valor_medio );
 sqr_max = max(SQ);
@@ -79,6 +80,9 @@ for i=1:1:N
     ramp_accion = ramp_accion + abs(RAMP(i));
    % ramp_potencia = ramp_potencia + RAMP(i)*RAMP(i);
 end
+disp( "====================================================" );
+disp( "Señal Rampa: " );
+
 ramp_valor_medio = ramp_valor_medio/N;
 ramp_max = max(RAMP);
 ramp_min = min(RAMP);
