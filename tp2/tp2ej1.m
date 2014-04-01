@@ -87,7 +87,7 @@ disp( "Valor medio: " ), disp( ramp_valor_medio );
 ramp_max = max(RAMP);
 disp( "Valor máximo" ), disp( ramp_max );
 ramp_min = min(RAMP);
-idsp( "Valor minimo" ), disp( ramp_min );
+disp( "Valor minimo" ), disp( ramp_min );
 ramp_amplitud = ramp_max - ramp_min;
 disp( "Amplitud: " ), disp( ramp_amplitud );
 ramp_potencia = ramp_energia/N;
