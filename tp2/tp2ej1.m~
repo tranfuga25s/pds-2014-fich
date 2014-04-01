@@ -18,11 +18,17 @@ for i=1:1:N
 end
 disp( "Señal senoidal: " );
 sin_valor_medio = sin_valor_medio/N;
+disp( "Valor medio: " ), disp( sin_valor_medio );
 sin_max = max(x);
+disp( "Maximo: " ), disp( sin_max );
 sin_min = min(x);
+disp( "Minimo: " ), disp( sin_min );
 sin_amplitud = max(x);
+disp( "Amplitud: " ), disp( sin_amplitud );
 sin_potencia =  sin_energia/N;
+disp( "Potencia: " ), disp( sin_potencia );
 sin_RSM = sqrt(sin_potencia);
+disp( "RSM: " ), disp( sin_RSM );
 
 %CUADRADA
 tsq = 0:0.1:10-0.1;
