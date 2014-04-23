@@ -1,11 +1,12 @@
 % Guia de Trabajos Practicos Nº 3
 % Ejercicio 1
 clear all;
+close all;
 f1 = 10;
 f2 = 20;
 fm = 1/0.001;
 tinicio = 0;
-tfin = 1;
+tfin = 0.75;
 [t,S1]=senoidal( 1, f1, 0, fm, tinicio, tfin );
 [t,S2]=senoidal( 1, f2, 0, fm, tinicio, tfin );
 S = S1 + S2;
@@ -26,12 +27,6 @@ title( "Sumatoria" );
 
 figure(2);
 espectro = fft( S );
-[ x, ER, EI ] = espectro_frecuencia( espectro );
-
-subplot( 2, 1, 1 );
+[ x, ER ] = espectro_frecuencia( espectro );
 bar( ER );
-title( "Espectro de magnitud de sumatoria" );
-
-subplot( 2, 1, 2 );
-bar( EI );
-title( "Espectro de fase de sumatoria" );
+title( "Espectro de magnitud de sen(2*pi*10*t)+sen(2*pi*20*t)" );

@@ -8,7 +8,7 @@ tinicio = 0;
 tfin = 1;
 [t,S1]=senoidal( 1, f1, 0, fm, tinicio, tfin );
 [t,S2]=senoidal( 1, f2, 0, fm, tinicio, tfin );
-S = S1 + S2;
+S = S1 + 4.*S2 .+ 4;
 
 figure(1);
 subplot( 3, 1, 1 );
@@ -26,12 +26,6 @@ title( "Sumatoria" );
 
 figure(2);
 espectro = fft( S );
-[ x, ER, EI ] = espectro_frecuencia( espectro );
-
-subplot( 2, 1, 1 );
-bar( ER );
-title( "Espectro de magnitud de sumatoria" );
-
-subplot( 2, 1, 2 );
-bar( EI );
-title( "Espectro de fase de sumatoria" );
+%[ x, ER, EI ] = espectro_frecuencia( espectro );
+bar( real( espectro ) );
+title( "Espectro de magnitud de sen(2*pi*10*t)+4.*sen(2*pi*10*t)+4" );

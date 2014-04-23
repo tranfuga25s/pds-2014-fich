@@ -2,7 +2,7 @@
 % Ejercicio 1
 clear all;
 f1 = 10;
-f2 = 20;
+f2 = 10.5;
 fm = 1/0.001;
 tinicio = 0;
 tfin = 1;
@@ -26,12 +26,6 @@ title( "Sumatoria" );
 
 figure(2);
 espectro = fft( S );
-[ x, ER, EI ] = espectro_frecuencia( espectro );
-
-subplot( 2, 1, 1 );
+[ x, ER ] = espectro_frecuencia( espectro );
 bar( ER );
-title( "Espectro de magnitud de sumatoria" );
-
-subplot( 2, 1, 2 );
-bar( EI );
-title( "Espectro de fase de sumatoria" );
+title( "Espectro de magnitud de sen(2*pi*10*t)+sen(2*pi*10.5*t)" );
