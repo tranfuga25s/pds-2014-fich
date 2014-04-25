@@ -1,6 +1,7 @@
 % Guia de trabajos practicos 3
 % Ejercicio 2
-
+clear all;
+close all;
 f1=2; % en Hz
 f2=3.5; % en Hz
 ti=0; % en Seg
@@ -26,11 +27,11 @@ plot( t, S2 );
 figure(2);
 subplot( 2, 1, 1 );
 [x, ERS1 ] = espectro_frecuencia( TS1 );
-stem( t, ERS1 );
+stem( t, abs( ERS1 ) );
 
 subplot( 2, 1, 2 );
 [x, ERS2 ] = espectro_frecuencia( TS2 );
-stem( t, ERS2 );
+stem( t, abs( ERS2 ) );
 
 % Verificar que los pares de señales sean ortogonales
 tolerancia = 0.0001;
@@ -38,12 +39,13 @@ tolerancia = 0.0001;
 % DOT( X, Y ) = sum (conj (X) .* Y, dim )
 display( "Prod int TS1<->TS2");
 R1 = dot( TS1, TS2 )
-if( R2 < tolerancia ) 
+if( R1 < tolerancia ) 
   display( 'Ortogonal en dominio frecuencia' );
 else
   display( 'No Ortogonal en dominio frecuencia' );
 end
 
+display( "Prod int S1<->S2" );
 R2 = dot( S1, S2 );
 if( R2 < tolerancia )
   display( 'Ortogonal en dominio tiempo' );
@@ -54,7 +56,7 @@ end
 % Grafico comparativo
 figure(3);
 subplot( 2, 1, 1 );
-bar( [ R2 ] );
+bar( R2 );
 title( "Producto interno ( dominio tiempo )" );
 
 subplot( 2, 1, 2 );
