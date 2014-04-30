@@ -9,7 +9,7 @@ tfin = 1; % en Seg
 
 fm = 100; % en Hz
 
-f = 4;
+f = 4; % en Hz
 
 dt = 1/fm;
 t = tinicio:dt:tfin;
@@ -60,6 +60,7 @@ title( "Parte imaginaria" );
 antitranformada = ifft( TFSC3 );
 subplot( 3, 1, 3 );
 plot( real( antitranformada ) );
+title( "Senal antitranformada" );
 %axis( [ 0 1 -1.1 1.1 ] );
 
 
