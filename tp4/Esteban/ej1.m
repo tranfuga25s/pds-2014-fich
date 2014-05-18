@@ -67,7 +67,10 @@ plot( y6 );
 title( "y = x[n]+2");
 
 % Item 7
-y7 = n+x;
+y7 = zeros( size( x ) );
+for i=1:size(x)
+  y(i) = i*x(i);
+end
 figure( 7 );
 plot( y7 );
 title( "y7 = n*x[n]");
