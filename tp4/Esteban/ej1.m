@@ -39,6 +39,8 @@ for i=1+n:size(x)-n
         y3(i) = y3(i) + x(j);
     end
 end
+figure(3);
+plot( y3 );
 
 % Item 4
 y4 = zeros( size( x ) );
@@ -46,6 +48,9 @@ n = 3;
 for i=n:size(x)
     y4(i-n) = x(i);
 end
+
+figure(4);
+plot( y4 );
 
 % Item 5
 y5 = exp( x );
