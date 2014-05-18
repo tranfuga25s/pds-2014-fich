@@ -55,9 +55,18 @@ plot( y4 );
 % Item 5
 y5 = exp( x );
 
+figure( 5 );
+plot( y5 );
+
 % Item 6
 y6 = x + 2;
+figure( 6 );
+plot( y6 );
+title( "y = x[n]+2");
 
 % Item 7
 y7 = n+x;
+figure( 7 );
+plot( y7 );
+title( "y7 = n*x[n]");
 
