@@ -15,7 +15,7 @@ Ys = convolucion_sumatoria( S1, S2 );
 Yc = conv( S1, S2 );
 Yf = filter( S1, S2 );
 Yf = ifft( fft(S1).*fft(S2) );
-Yf2 = ?;
+
 
 subplot( 5, 1, 1 );
 plot( Ys );
