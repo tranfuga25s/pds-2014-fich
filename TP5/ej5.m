@@ -16,7 +16,7 @@ Ys = convolucion_suma( S1, S2 );
 Yc = conv( S1, S2 );
 %Yf = filter( S1, S2 );
 Yf = ifft( fft(S1).*fft(S2) );
-
+Yf2 = ifft( [ fft( S1 ) zeros( 1, length( S1 )-1 ) ] .* [ fft( S2 ) zeros( 1, length( S2 )-1 ) ] );
 
 subplot( 5, 1, 1 );
 plot( Ys );
@@ -31,9 +31,9 @@ plot( Yf );
 title( "Convolucion x filtro" );
 
 subplot( 5, 1, 4 );
-plot( Ys );
+plot( Yf );
 title( "Convolucion x propiedad" );
 
 subplot( 5, 1, 5 );
-plot( Ys );
+plot( Yf2 );
 title( "Convolucion x propiedad + muestras" );
