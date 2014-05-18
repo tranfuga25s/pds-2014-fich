@@ -57,6 +57,7 @@ y5 = exp( x );
 
 figure( 5 );
 plot( y5 );
+title( "y = e^x[n]" );
 
 % Item 6
 y6 = x + 2;
