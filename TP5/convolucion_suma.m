@@ -1,8 +1,8 @@
 % Convolución por suma
 
 function [x] = convolucion_suma( X, Y ) 
-  tx = length( X )
-  ty = length( Y )
+  tx = length( X );
+  ty = length( Y );
   x = zeros( tx + ty +1 )
   for i=1:tx
     for j=1:ty
