@@ -24,12 +24,12 @@ title( "Conv" );
 
 subplot( 5, 1, 3 );
 plot( Yf );
-title( "Convolucion x sumatoria" );
+title( "Convolucion x filtro" );
 
 subplot( 5, 1, 4 );
 plot( Ys );
-title( "Convolucion x sumatoria" );
+title( "Convolucion x propiedad" );
 
 subplot( 5, 1, 5 );
 plot( Ys );
-title( "Convolucion x sumatoria" );
+title( "Convolucion x propiedad + muestras" );
