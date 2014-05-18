@@ -15,8 +15,10 @@ figure(1);
 Ys = convolucion_suma( S1, S2 );
 Yc = conv( S1, S2 );
 %Yf = filter( S1, S2 );
-Yf = ifft( real( fft(S1) ) .* real( fft(S2) ) );
-Yf2 = ifft( [ real( fft( S1 ) ) zeros( 1, length( S1 )-1 ) ] .* [ real( fft( S2 ) ) zeros( 1, length( S2 )-1 ) ] );
+FT1 = fft(S1);
+FT2 = fft(S2);
+Yf = ifft( real( ) .* real( ) );
+Yf2 = ifft( [ real( FT1 ) zeros( 1, length( S1 )-1 ) ] .* [ real( FT2 ) zeros( 1, length( S2 )-1 ) ] );
 
 subplot( 5, 1, 1 );
 plot( Ys );
