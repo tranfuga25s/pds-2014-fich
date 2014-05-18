@@ -7,7 +7,7 @@ t=0:0.1:N;
 f= 10; % En Hz
 
 S1 = sin( 2 * pi * t * f );
-S2 = square();
+S2 = square(t);
 
 
 figure(1);

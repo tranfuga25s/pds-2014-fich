@@ -6,7 +6,7 @@ function [x] = convolucion_suma( X, Y )
   x = zeros( tx + ty +1 );
   for i=0:tx
     for j=0:ty
-       x(p) = x(p) + X(i) * Y(j);
+       x(i+j-1) = x(i+j-1) + X(i) * Y(j);
     end
   end
 end
