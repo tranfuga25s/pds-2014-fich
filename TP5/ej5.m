@@ -3,6 +3,8 @@
 
 N = 10;
 
+t=0:0.1:N;
+
 S1 = senoidal();
 S2 = square();
 
