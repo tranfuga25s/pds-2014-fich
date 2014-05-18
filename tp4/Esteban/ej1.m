@@ -51,6 +51,7 @@ end
 
 figure(4);
 plot( y4 );
+title( "y = x[ n -no ]");
 
 % Item 5
 y5 = exp( x );
