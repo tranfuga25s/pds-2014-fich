@@ -11,9 +11,9 @@ S2 = square(t);
 
 
 figure(1);
-Ys = convolucion_sumatoria( S1, S2 );
+Ys = convolucion_suma( S1, S2 );
 Yc = conv( S1, S2 );
-Yf = filter( S1, S2 );
+%Yf = filter( S1, S2 );
 Yf = ifft( fft(S1).*fft(S2) );
 
 
