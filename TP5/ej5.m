@@ -4,8 +4,9 @@
 N = 10;
 
 t=0:0.1:N;
+f= 10; % En Hz
 
-S1 = sen();
+S1 = sen( 2 * pi * t * f );
 S2 = square();
 
 
