@@ -1,6 +1,7 @@
 % Trabajo Practico Nº 5
 % Ejercicio 5
-
+close all;
+clear all;
 N = 10;
 
 t=0:0.1:N;
