@@ -1,7 +1,7 @@
 h=[0,1,0,1,0,1,0,1,0,1];
 %x, es una entrada periodica
 x=[1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10];
-[t,s]=senoidal(1,1,0,30,100);
+[t,s]=senoidal(1,1,0,30,0,1);
 %figura con conv  lineal de matlab
 r=conv(h,x);
 figure(1)
