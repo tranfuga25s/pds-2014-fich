@@ -7,6 +7,8 @@ t = 0:0.001:2;
 
 Ss = sin( 2 * pi .* freq' .* t );
 
+Ys = zeros( length( t ), length( t ) );
+
 X = load( 'pb100.txt' );
 
 % Parte 1
