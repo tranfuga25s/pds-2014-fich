@@ -7,7 +7,7 @@ t = 0:0.001:2;
 
 Ss = sin( 2 * pi .* freq' .* t );
 
-Ys = zeros( length( t ), length( t ) );
+Ys = zeros( length( t ), length( freq ) );
 
 X = load( 'pb100.txt' );
 
@@ -17,6 +17,7 @@ X = load( 'pb100.txt' );
 figure(1);
 for i=1:length(freq)
   subplot( length( freq ), 1, i );
+  Ys(
   plot( conv( Ss(i,:), X ) );
   str = sprintf("Senoidal de %i Hz", freq(i) );
   title(str); 
