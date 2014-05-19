@@ -38,7 +38,7 @@ plot( Yf );
 title( "Convolucion x filtro" );
 
 subplot( 5, 1, 4 );
-plot(  Yf );
+plot( real( Yf ) );
 title( "Convolucion x propiedad" );
 
 subplot( 5, 1, 5 );
