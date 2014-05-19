@@ -32,7 +32,7 @@ Ds = zeros( length( freq ), length( t ) );
 figure(2);
 for i=1:length(freq)
   subplot( length( freq ), 1, i );
-  [ R, r ] = deconv( Ys(i,:), X );
+  [ R, r ] = deconv( X, Ys(i,:) );
   plot( R );
   Ds(i,:) = R;
   str = sprintf( "Senoidal recuperada de %i Hz", freq(i) );
