@@ -10,8 +10,13 @@ f= 10; % En Hz
 S1 = sin( 2 * pi * t * f );
 S2 = square(t);
 
-
 figure(1);
+subplot( 2, 1, 1 );
+plot( S1 );
+subplot( 2, 1, 2 );
+plog( S2 );
+
+figure(2);
 Ys = convolucion_suma( S1, S2 );
 Yc = conv( S1, S2 );
 %Yf = filter( S1, S2 );
