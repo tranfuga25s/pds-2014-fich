@@ -34,7 +34,7 @@ plot( Yc );
 title( "Conv" );
 
 subplot( 5, 1, 3 );
-plot( Yf );
+plot( real( Yf ) );
 title( "Convolucion x filtro" );
 
 subplot( 5, 1, 4 );
