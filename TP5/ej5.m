@@ -19,7 +19,7 @@ plot( S2 );
 figure(2);
 Ys = convolucion_suma( S1, S2 );
 Yc = conv( S1, S2 );
-Yf = filter( S1, S2, t );
+Yf = filter( S1, t, S2 );
 FT1 = fft(S1);
 FT2 = fft(S2);
 Yf = ifft( FT2 .* FT1 );
