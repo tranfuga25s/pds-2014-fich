@@ -23,7 +23,7 @@ Yc = conv( S1, S2 );
 FT1 = fft(S1);
 FT2 = fft(S2);
 Yf = ifft( FT2 .* FT1 );
-Yf2 = ifft( [ real( FT2 ) zeros( 1, length( S2 )-1 ) ] .* [ real( FT1 ) zeros( 1, length( S1 )-1 ) ] );
+Yf2 = ifft( [ FT2 zeros( 1, length( S2 )-1 ) ] .* [ FT1 zeros( 1, length( S1 )-1 ) ] );
 
 subplot( 5, 1, 1 );
 plot( Ys );
@@ -38,9 +38,9 @@ plot( Yf );
 title( "Convolucion x filtro" );
 
 subplot( 5, 1, 4 );
-plot( real( Yf ) );
+plot(  Yf );
 title( "Convolucion x propiedad" );
 
 subplot( 5, 1, 5 );
-plot( real( Yf2 ) );
+plot( Yf2 );
 title( "Convolucion x propiedad + muestras" );
