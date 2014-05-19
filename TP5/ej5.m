@@ -5,7 +5,7 @@ clear all;
 N = 10;
 
 t=0:0.01:N;
-f= 100; % En Hz
+f= 5; % En Hz
 
 S1 = sin( 2 * pi * t * f );
 S2 = square(t);
