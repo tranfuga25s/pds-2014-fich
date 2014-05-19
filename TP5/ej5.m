@@ -22,7 +22,7 @@ Yc = conv( S1, S2 );
 %Yf = filter( S1, S2 );
 FT1 = fft(S1);
 FT2 = fft(S2);
-Yf = ifft( real( FT1 ) .* real( FT2 ) );
+Yf = ifft( real( FT2 ) .* real( FT1 ) );
 Yf2 = ifft( [ real( FT1 ) zeros( 1, length( S1 )-1 ) ] .* [ real( FT2 ) zeros( 1, length( S2 )-1 ) ] );
 
 subplot( 5, 1, 1 );
