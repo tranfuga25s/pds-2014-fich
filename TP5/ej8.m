@@ -16,6 +16,7 @@ figure(1);
 for i=1:length(freq)
   subplot( length( freq ), 1, i );
   plot( conv( Ss(i,:), X ) );
-  title( "Senoidal de "+freq(i) );
+  str = sprintf("Senoidal de %s Hz", freq(i) );
+  title(str); 
 end
   
