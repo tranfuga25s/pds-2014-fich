@@ -42,5 +42,5 @@ plot( real( Yf ) );
 title( "Convolucion x propiedad" );
 
 subplot( 5, 1, 5 );
-plot( Yf2 );
+plot( real( Yf2 ) );
 title( "Convolucion x propiedad + muestras" );
