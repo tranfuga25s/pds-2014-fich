@@ -14,7 +14,7 @@ figure(1);
 subplot( 2, 1, 1 );
 plot( S1 );
 subplot( 2, 1, 2 );
-plog( S2 );
+plot( S2 );
 
 figure(2);
 Ys = convolucion_suma( S1, S2 );
