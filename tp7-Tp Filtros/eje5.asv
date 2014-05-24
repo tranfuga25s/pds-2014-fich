@@ -1,0 +1,29 @@
+%ejercicio 5
+clear all
+close all
+clc
+fm=200;
+dt=1/fm;
+t = 0:dt:2*pi;
+x = sin(2*pi*50*t)+sin(2*pi*275*t)+sin(2*pi*5153*t)+sin(2*pi*200*t);
+plot(t,x),title('señal')
+pause
+fm = 500;
+n = 200;
+%filtro fir
+wn = 60/(fm/2);
+b = fir1(n,wn,'low',hamming(n+1));
+h = freqz(b)
+plot(abs(h)),title('abs fir'),grid on
+pause
+freqz(b)
+pause
+y1 = filter(b,1,x);
+plot(y1),title('señal filtrada por fir')
+pause
+%filtro iir
+n=20;
+wn=60/(fm/2);
+[num,denom]=butter(n,wn);
+y2=filter(num,denom,x);
+plot(y2),title('señal filtrada por iir');
