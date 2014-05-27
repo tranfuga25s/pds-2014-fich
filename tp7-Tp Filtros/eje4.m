@@ -5,8 +5,8 @@ clc
 %elimimar ruido de 50 Hz
 %DATOS
 %deltaF=fm/N=1/NT=1/T_t
-N=300;	%señal muestreada a 300hz (suponemos duracion 1 seg)
-truncado=300;	%cantidad de muestras que tomo para el truncado temporal. (ventana en el tiempo,la cual voy a antitransformar y convolucionar en la frecuencia)
+N=300;	%seï¿½al muestreada a 300hz (suponemos duracion 1 seg)
+truncado=200;	%cantidad de muestras que tomo para el truncado temporal. (ventana en el tiempo,la cual voy a antitransformar y convolucionar en la frecuencia)
 ancho=2;	%ancho para eliminar componente de 50Hz
 
 %MUESTREO DE LA RESPUESTA EN FRECUENCIA

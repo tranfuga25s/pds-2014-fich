@@ -1,0 +1,83 @@
+clear all
+close all
+clc
+%Filtro FIR
+%elimimar ruido de 50 Hz
+%DATOS
+%deltaF=fm/N=1/NT=1/T_t
+N=300;	%se�al muestreada a 300hz (suponemos duracion 1 seg)
+truncado=300;	%cantidad de muestras que tomo para el truncado temporal. (ventana en el tiempo,la cual voy a antitransformar y convolucionar en la frecuencia)
+ancho=2;	%ancho para eliminar componente de 50Hz
+
+%MUESTREO DE LA RESPUESTA EN FRECUENCIA
+%recordar que en los filtro FIR, yo armo la respuesta en frecuencia que
+%quiero para mi filtro, y luego antitransformo esa H[k] para obtener los
+%coeficientes de mi filtro ( h[n])
+fft_f=zeros(1,N);
+
+%elimino las muestras anterior y posterior a k = 51 (50hz) con el
+%ancho definido arriba
+for i=-ancho:ancho,
+fft_f(51+i)=1;	% frecuencia positiva 
+fft_f(251+i)=1;	% frecuencia negativa
+end
+%ploteo mi respuesta en frecuencia
+figure('name','H[k] deseada');
+plot(fft_f);
+xlabel('frecuencia');
+ylabel('magnitug');
+title('Respuesta Frecuencia Filtro Deseado')
+%APLICO LA TDF INVERSA
+f=real(ifft(fft_f)); %f esta en el tiempo
+figure('name','ifft de H[k] -> h[n]');
+plot(fftshift(f));
+xlabel('muestras');
+title('transformada inversa del filtro deseado - sinc - sin truncar N=300') 
+% se observa que la antitransformada es una sinc
+
+%REALIZO EL TRUNCADO TEMPORAL (trunco  la sinc temporal)
+%f truncada
+ftrunc=[f(1:truncado/2) f(N-truncado/2+1:N)]; %trunco en el tiempo
+%MUESTRO DE [-fm/2 fm/2] CON FFTSHIFT
+figure('name', 'f en tiempo truncada por N muestras');
+h=fftshift(ftrunc); %acomodo las muestras
+plot(h);
+xlabel('muestras'); 
+title('transformada inversa del filtro deseado - sinc - truncarda N=100');
+
+ 
+%VENTANAS
+%ventana de Blackman --####
+windows3=h.*blackman(length(h))';
+
+
+
+ 
+%GRAFICO PARA COMPARAR RESULTADOS 
+whitebg([.5,.5,.5])
+%figure('name','ventana de Blackman');
+subplot(2,1,1);
+plot(windows3,'y');
+xlabel('muestras'); 
+title(['ventana de Blackman ',num2str(truncado),' muestras']); 
+subplot(2,1,2); 
+plot(abs(fft(windows3)),'y');
+xlabel('frecuencias');
+ylabel('magnitud');
+
+
+%construyo la se�al senoidal muestreada a 200hz
+fm=200;
+dt=1/fm;
+t_tot=1;
+t=[0:dt:t_tot-dt];
+s=sin(2*pi*t*15) + sin(2*pi*t*50);
+
+figure(11);
+xlabel('frecuencias');
+plot(abs(fftshift(fft(s))));
+
+convolucionado = conv( windows3, s );
+figure(12);
+xlabel('Frecuencias');
+plot(abs(real(fftshift(fft(convolucionado)))));

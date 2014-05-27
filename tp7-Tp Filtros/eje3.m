@@ -2,10 +2,10 @@ clear all
 close all
 clc
 %Butterworth
-[Nbut, Wnbut] = buttord([2500/5000 3000/5000 ], [2300/5000 3200/5000], 0.7, 55)
+[Nbut, Wnbut] = buttord([2500/10000 3000/10000 ], [2300/10000 3200/10000], 0.7, 55)
 [Bbut, Abut] = butter(Nbut, Wnbut);
 figure('name','Ejercicio 3 - Butterworth');
-plot(abs(freqz(Bbut,Abut,5000)));title('Butterworth')
+plot((freqz(Bbut,Abut,10000/2,10000)));title('Butterworth')
 
 %orden y frecuencia para filtro pasabanda de Chebyshev 1
 [Ncheb1,Wncheb1]=cheb1ord([2500/5000 3000/5000],[2300/5000 3200/5000],0.7,55) 
@@ -21,16 +21,16 @@ plot(abs(freqz(Bcheb1,Acheb1,5000)));title('Chebyshev 1')
 figure('name','Ejercicio 3 - Chebyshev 2');
 plot(abs(freqz(Bcheb2,Acheb2,5000)));title('Chebyshev 2')
 % 
-%Obtenemos orden y frecuencia para filtro pasabanda elíptico
+%Obtenemos orden y frecuencia para filtro pasabanda elï¿½ptico
 [Nelip,Wnelip]=ellipord([2500/5000 3000/5000],[2300/5000 3200/5000],0.7,55) 
-%partir de estos datos generamos el filtro elíptico
+%partir de estos datos generamos el filtro elï¿½ptico
 [Belip ,Aelip] = ellip(Nelip, 0.7, 55, Wnelip);
 figure('name','Ejercicio 3 - eliptico');
-plot(abs(freqz(Belip,Aelip,5000)));title('elíptico')
+plot(abs(freqz(Belip,Aelip,5000)));title('elï¿½ptico')
 
 
 
-%Vemos que el orden mínimo es el del filtro elíptico con un valor 5.
+%Vemos que el orden mï¿½nimo es el del filtro elï¿½ptico con un valor 5.
 %Comparamos que pasa con el resto de los filtros utilizando este orden
 %Butterworth
 [Bbut5,Abut5]=butter(5,Wnbut);

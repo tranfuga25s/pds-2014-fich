@@ -1,0 +1,3 @@
+[submodule "TP-Final/libreria-midi"]
+	path = TP-Final/libreria-midi
+	url = git@github.com:tranfuga25s/matlab-midi.git
