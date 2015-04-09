@@ -1,6 +1,7 @@
-%ejercicio 1
-%SENOIDAL
-%[t,x]=senoidal(A,f,tita,fm,t_ini,t_fin)
+% Trabajo Practico 2
+% Ejercicio 1
+% SENOIDAL
+% [t,x]=senoidal(A,f,tita,fm,t_ini,t_fin)
 [t,x]=senoidal(1,5,0,100,0,1);
 figure(1)
 plot(t,x);

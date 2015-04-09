@@ -1,6 +1,6 @@
-%el espacio es el conjunto de:
-%{S | S(t)=A*sin(2*pi*f*t+alpha) / A,alpha pertenecen a los reales R and
-%f=cte }
+% El espacio es el conjunto de:
+% {S | S(t)=A*sin(2*pi*f*t+alpha) / A,alpha pertenecen a los reales R and
+% f=cte }
 %[t,x]=senoidal(A,f,tita,fm,t_ini,t_fin)
 
 %senoidales genericas (distinta amplitud, frecuencia y fase)
