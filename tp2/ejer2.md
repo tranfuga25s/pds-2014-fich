@@ -12,5 +12,5 @@ Entonces, segun los resultados observados en las graficas segun cada tipo se lle
 - Misma amplitud, distinta frecuencia: No
 - Misma frecuencia y fase, distinta amplitud: Si
 - Misma frecuencia y distinta amplitud y fase: Si
-- Senoidales por un escalar: Si
+- Senoidales por un escalar: *Si*
 

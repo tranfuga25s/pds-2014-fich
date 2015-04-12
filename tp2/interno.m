@@ -1,3 +1,4 @@
+% Funcion de producto interno
 function [answer] = interno(X,Y)
     suma=0;
     for i=1:length(X)

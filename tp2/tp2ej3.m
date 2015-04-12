@@ -1,3 +1,8 @@
+% Trabajo Practico 2
+% Ejercicio 3
+
+% Frecuencias Utilizadas:
+% 1, 2, 5, 10
 %[t,x]=senoidal(A,f,tita,fm,t_ini,t_fin)
 [t,S1] = senoidal(1,1,0,100,0,3);
 [t,S3] = senoidal(1,3,0,100,0,3);
@@ -14,18 +19,18 @@ for i=1:1:6
         resu(i,j) = interno(S(i,:),S(j,:));
     end
 end
-resu
-% 
-%mismo seno con cambio de fases
+disp(resu);
+divisor_consola();
 
+% Mismo seno con cambio de fases
 SF = zeros(20,300);
-fases=zeros(20,1);
+fases = zeros(20,1);
 for k=1:20
     %[t,x]=senoidal(A,f,tita,fm,t_ini,t_fin)
     [x,SF(k,:)] = senoidal(1,5,k*(pi/4),100,0,3);
-    fases(k) = interno( SF(1,:) , SF(k,:) );
+    fases(k) = interno( SF(1,:), SF(k,:) );
 end
-fases
+
 
 % %[t,x]=senoidal(A,f,tita,fm,t_ini,t_fin)
 % [fr,fruta1] = senoidal(1,1,0,100,0,3);
