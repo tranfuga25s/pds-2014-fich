@@ -4,7 +4,7 @@
 %utilizando las funciones Matlab mean y std(std al cuadrado = a varianza).
 clear all
 clc
-tol=0.002;
+tol=0.002; % Empirica para este ejercicio
 x=randn(500,500);
 %display ('estacionalidad ');
 mest=mean(x);
@@ -22,9 +22,9 @@ d=mean(verg);
      display('no ergodica');
  end
  
- %para que una señal sea estacionaria se pide que verifique las propiedades
- %estadisticas de la señal a lo largo de todos los tiempo para todas la
- %realizaciones. por lo tanto tiene como esta señal tiene una distribucion
- %normal deve verificar que para cada ti de todas la realizaciones
- %la varianza tienda  (desvio al cuadrado) a 1 osae la media del desvio
+ %para que una seï¿½al sea estacionaria se pide que verifique las propiedades
+ %estadisticas de la seï¿½al a lo largo de todos los tiempo para todas la
+ %realizaciones. Por lo tanto, como esta seÃ±al tiene una distribucion
+ %normal debe verificar que para cada ti de todas la realizaciones
+ %la varianza tienda  (desvio al cuadrado) a 1, o sea, la media del desvio
  %tienda a 1, y que la media de las medias tienda a cero.

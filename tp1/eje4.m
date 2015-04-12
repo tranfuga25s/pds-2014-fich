@@ -1,4 +1,5 @@
-%ejercicio 4
+% Ejercicio 4
+
 figure(1);
 [t,x]=senoidal( 1, 5, 0, 100, 0, 1 );
 plot(t,x);
@@ -34,3 +35,5 @@ figure(6);
 plot(t,x);
 title( 'Muestreo: 0.5 Hz');
 xlabel( 'Tiempo' );
+
+

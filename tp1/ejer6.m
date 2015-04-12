@@ -20,15 +20,16 @@ t2=0:T2:(1-T2);
 N2=length(t2);
 y2=sin(2*pi*t2);
 subplot( 1, 2, 2 );
-stem(t2,y2,'r-'); title(' seno - fm=40');
+stem(t2,y2,'r-'); 
+title(' seno - fm=40');
 
 %//interpolacion lineal
 x=zeros(1,N2);
 for i=1:N2  % m Sumatoria de los elementos de la frecuencia nueva
   for j=1:N1 % n Sumatoria de los elementos de la frecuencia vieja
-    % mTi = Posición de la muestra en la escala de tiempo de la frecuencia
+    % mTi = Posiciï¿½n de la muestra en la escala de tiempo de la frecuencia
     % nueva
-    % nT = Posición de la muestra en la escala de tiempo de la frecuencia
+    % nT = Posiciï¿½n de la muestra en la escala de tiempo de la frecuencia
     % vieja
     % Diviendo por el periodo viejo nos normaliza la diferencia a la escala
     % correcta
@@ -43,14 +44,14 @@ subplot( 1, 2, 1 );
 plot( t2, x, 'g-' ); 
 title('Interpolacion Lineal - Seno  fm=40');
   
-% Interpolación Sinc
+% Interpolaciï¿½n Sinc
 
 xsinc=zeros(1,N2);
 for i=1:N2  % m Sumatoria de los elementos de la frecuencia nueva
   for j=1:N1 % n Sumatoria de los elementos de la frecuencia vieja
-    % mTi = Posición de la muestra en la escala de tiempo de la frecuencia
+    % mTi = Posiciï¿½n de la muestra en la escala de tiempo de la frecuencia
     % nueva
-    % nT = Posición de la muestra en la escala de tiempo de la frecuencia
+    % nT = Posiciï¿½n de la muestra en la escala de tiempo de la frecuencia
     % vieja
     % Diviendo por el periodo viejo nos normaliza la diferencia a la escala
     % correcta
