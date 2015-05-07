@@ -19,28 +19,33 @@ y1 = A*sin( 2*pi*f*t*T).*x;
 
 figure( 1 );
 plot( y1 );
+title("y[n]=Asen(2*pi*f*n*T)");
 
 % Item 2
-y2 = zeros( size( x ) );
-for i=1:size(x) 
-    for j=i:size(x)
-        y2(i) = y2(i) + x(j);
+x2 = 0:0.1:1;
+y2 = zeros(size(x2));
+for i=1:10
+    for j=1:i
+        y2(i) += x2(j);
     end
 end
 
 figure(2);
 plot( y2 );
+title("y[n]=sum(x[n])");
 
 % Item 3
-y3 = zeros( size( x ) );
+x3 = 0:0.1:2;
+y3 = zeros(20);
 n = 3;
-for i=1+n:size(x)-n
+for i=1+n:20-n
     for j=1:size(x)-2*n
-        y3(i) = y3(i) + x(j);
+        y3(i) = y3(i) + x3(j);
     end
 end
 figure(3);
-plot( y3 );
+plot(y3);
+title("y[n]=sum(x[n],+n0)");
 
 % Item 4
 y4 = zeros( size( x ) );
@@ -54,7 +59,8 @@ plot( y4 );
 title( "y = x[ n -no ]");
 
 % Item 5
-y5 = exp( x );
+x5 = 0:0.1:2;
+y5 = exp( x5 );
 
 figure( 5 );
 plot( y5 );
@@ -67,11 +73,11 @@ plot( y6 );
 title( "y = x[n]+2");
 
 % Item 7
-y7 = zeros( size( x ) );
-for i=1:size(x)
-  y(i) = i*x(i);
+x7 = 0:0.1:1;
+y7 = zeros(10);
+for i=1:10
+  y7(i) = i*x7(i);
 end
 figure( 7 );
 plot( y7 );
 title( "y7 = n*x[n]");
-
