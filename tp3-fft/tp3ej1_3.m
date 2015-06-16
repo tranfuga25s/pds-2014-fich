@@ -1,30 +1,33 @@
 % %NOTA: recordar que la fft nos retorna primero la parte positiva
 % %luego desde la mitad en adelante la parte negativa
 % %empenzando desde cero
-  [t,S1] = senoidal(1,100,0,1000,0,1);
-  [t,S2] = senoidal(4,20,0,1000,0,1);
-  S=S1+S2+4;
- N=length(S);
+[t,S1] = senoidal(1,100,0,1000,0,1);
+[t,S2] = senoidal(4,20,0,1000,0,1);
+S=S1+S2+4;
+N=length(S);
 % %1
-  %X=fft(S);
+ X=fft(S);
  
  %dibuja la transformada de forma correcta
  % 1) con funciones de matlab 
-  XX=fftshift(fft(fftshift(S)));
+ XX=fftshift(fft(fftshift(S)));
 
  % 2) programado 
  %el resultado es el mismo, solo hay diferencia en el indice, con shift el
  %indice es uno mas, corre el indice uno a la derecha.ejemplo: 501 corresponde a
  %500
- %XX=zeros(N);
- %XX(1:(N/2))= X(N/2:N-1);
-%  XX((N/2):N-1) = X(1:N/2);
+ XX=zeros(N);
+ XX(1:(N/2))= X(N/2:N-1);
+ XX((N/2):N-1) = X(1:N/2);
 % display(length(X(1:N/2)));
 % display(length(X(N/2:N-1)));
 %en el eje de las absisas, el 1, representa la frecuencia cero
 %la frecuencia cero--> constantes!
-bar(abs(XX),'hist')
-
+subplot(2,1,1);
+bar(abs(XX),'hist');
+subplot(2,1,2);
+bar(abs(X),'hist')
+exit;
 %al sumar la cte 4 se agrega una frecuencia cero al principio del espectro 
 %igual a  d*fm*cte
 

@@ -1,6 +1,6 @@
-[t,S1] = senoidal(1,10,0,1000,0,2);
-[t,S2] = senoidal(4,20,0,1000,0,2);
-S=S1+S2;
+[t,S1] = senoidal(1,10,0,1000,0,1);
+[t,S2] = senoidal(4,20,0,1000,0,1);
+S=S1+4.*S2;
 N=length(S);
 X=fft(S);
 
@@ -11,6 +11,6 @@ for t=1:N
     sumaX = sumaX + abs(X(t))*abs(X(t));
 end
 sumaX = sumaX/N;
-sumaS
-sumaX
+display(sumaS);
+display(sumaX);
 %da igual!!!
